@@ -1,0 +1,115 @@
+#include <stdio.h>
+
+List insertsort(char** array, int length){
+}
+    fgets(line, MAX_LEN, input);
+  // appends first element
+int main(int argc, char* argv[]){
+
+  return list;
+  freeall(lines, count, list);
+char *strdup (const char *s) {
+  input = fopen(argv[1], "r");
+  return(0);
+  }
+    return 1;
+char** read(FILE* input, int lines){
+// Programming Assignment 2
+}
+
+  for (int i = 0; i < linecount; i++){
+  for (int j = 1; j < length; j++){
+  free(lines);
+      insertAfter(list, j);
+  }
+    fprintf(output, "%s", lines[getElement(list)]);
+  }
+// Self made implementation of strdup
+  char line[MAX_LEN];
+    printf("Unable to open file %s for reading\n", argv[2]);
+}
+    printf("Unable to open file %s for reading\n", argv[1]);
+
+    // otherwise insert after it
+#define MAX_LEN 160
+    int index = j - 1;
+  FILE* output = fopen(argv[2], "w");
+    free(lines[i]);
+
+  int count = 0;
+
+
+// carries out a variation of the insertion sort
+}
+    //sorting
+// Rahul Palamuttam, rpalamut@ucsc.edu
+
+  fclose(output);
+    // if cursor is null, then prepend
+#include "List.h"
+
+  strcpy(d,s);
+  List list = insertsort(lines, count);
+#include <string.h>
+  for(moveTo(list, 0); getIndex(list) >= 0; moveNext(list)){
+    
+  char** array = malloc(sizeof(char**) * lines);
+  return d;
+// Due to compiler specifications strdup throws warnings
+    char *temp = array[j];
+  fclose(input);
+  char** lines = read(input, count);
+
+  if (d == NULL) return NULL;
+  //close files
+    }
+//reads the file into an array of strings
+
+  // read each line of input file, then count and print tokens
+  // carries out insertion sort
+void freeall(char** lines, int linecount, List list){
+  List list = newList();
+  FILE* input = fopen(argv[1], "r");
+
+    while (index > -1 && strcmp(temp, array[getElement(list)]) < 1){
+  // prints out the list by looking for indices in array
+
+    } else {
+    exit(1);
+    printf("Invalid number of inputs");
+}
+    if(getIndex(list) == -1){
+  char line[MAX_LEN];
+  }
+  }
+// $Id: Lex.c,v 1.3 2014-01-19 21:09:27-08 - - $
+#include <stdlib.h>
+  freeList(&list);
+  char *d = malloc(strlen(s) + 1);
+      index--;
+  }
+
+  // makes a new list object
+    }
+
+  while( fgets(line, MAX_LEN, input) != NULL) {
+      movePrev(list);
+    moveTo(list, index);
+
+  for(int i = 0; i < lines; i++){
+    //move cursor to current position
+    array[i] = strdup(line);
+  fclose(input);
+
+    count++;
+  if(argc != 3) {
+  } else if (output == NULL){
+  if (length > 0) append(list, 0);
+  if(input == NULL){ 
+      prepend(list, j);
+  // close and reopen file to reset fgets
+  return array;
+    return 1;
+  } 
+  
+//frees all the malloced heap space used by the program

@@ -1,0 +1,31 @@
+// Rahul Palamuttam, rpalamut@ucsc.edu
+// Programming Assigment 1 : Lex
+// $Id: README,v 1.1 2014-01-12 03:14:15-08 - - $
+Files submitted : List.java ListClient.java Lex.java Makefile README
+
+List.java
+
+	A list data structure that utilizes a bi-directional queue by
+	implementing a doubly linked list. It uses a cursor node as a marker
+	for iteration purposes. The List is used to store the line number or 
+	Array indices from Lex.java
+
+Lex.java
+	
+	Takes in two command line arguements giving the names of an input and
+	output file. The inputfile is any textfile, while the output file will
+	consist of the lines of the inputfile arranged in alphabetical order.
+
+ListClient.java
+
+	A test file provided by the instructor to test the List module. It has 
+	been unaltered
+
+Makefile
+
+	A recipe to automate the building of the executable jar file Lex. It is 
+	used to speed up the process of compiling java files.
+
+README
+
+	The current file. It presents a table of contents to the project.

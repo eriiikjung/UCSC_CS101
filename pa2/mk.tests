@@ -1,0 +1,16 @@
+#!/bin/sh -x
+# $Id: mk.tests,v 1.1 2014-01-19 21:09:27-08 - - $
+export PATH=$PATH:/afs/cats.ucsc.edu/courses/cmps012b-wm/bin
+ulimit -f 32
+ulimit -t 120
+
+python3 RandomInput1.py
+
+
+./Lex inputfile c.out 
+
+
+date > test.diff
+diff python.out c.out >> test.diff
+date > test.side.diff
+diff -y python.out c.out >> test.side.diff

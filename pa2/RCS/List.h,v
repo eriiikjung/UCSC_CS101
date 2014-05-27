@@ -1,0 +1,80 @@
+head	1.2;
+access;
+symbols;
+locks;
+comment	@ * @;
+
+
+1.2
+date	2014.01.20.02.12.14;	author -;	state -;
+branches;
+next	1.1;
+
+1.1
+date	2014.01.19.10.44.03;	author -;	state -;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.2
+log
+@-
+@
+text
+@//Rahul Palamuttam, rpalamut@@ucsc.edu
+// Programming Assignment 2
+// $Id: List.h,v 1.1 2014-01-19 02:44:03-08 - - $
+
+#ifndef __LIST_H__
+#define __LIST_H__
+
+#include <stdio.h>
+
+typedef struct ListObj* List;
+
+//Constructors-Destructors ------------------------------------
+List newList(void);
+void freeList(List* pL);
+
+// Access functions -------------------------
+int length(List L);
+int getIndex(List L);
+int front(List L);
+int back(List L);
+int getElement(List L);
+int equals(List A, List B);
+
+//Manipulation procedures -------------------------------------
+void clear (List L);
+void moveTo(List L, int i);
+void movePrev(List L);
+void moveNext(List L);
+void prepend(List L, int data);
+void append(List L, int data);
+void insertBefore(List L, int data);
+void insertAfter(List L, int data);
+void deleteFront(List L);
+void deleteBack(List L);
+void delete(List L);
+
+//Other operations -------------------------------------------------
+void printList (FILE* out, List L);
+List copyList(List L);
+
+#endif
+@
+
+
+1.1
+log
+@-
+@
+text
+@d3 39
+a41 1
+// $Id$
+@

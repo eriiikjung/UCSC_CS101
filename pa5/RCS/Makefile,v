@@ -1,0 +1,123 @@
+head	1.4;
+access;
+symbols;
+locks;
+comment	@# @;
+
+
+1.4
+date	2014.03.10.18.36.19;	author -;	state -;
+branches;
+next	1.3;
+
+1.3
+date	2014.03.10.10.30.00;	author -;	state -;
+branches;
+next	1.2;
+
+1.2
+date	2014.03.10.08.33.44;	author -;	state -;
+branches;
+next	1.1;
+
+1.1
+date	2014.03.10.08.27.07;	author -;	state -;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.4
+log
+@-
+@
+text
+@#------------------------------------------------------------------------------
+#  Makefile for CMPS 101 Programming Assignment 4
+#
+#  make                     makes FindComponents
+#  make GraphClient         makes GraphClient
+#  make clean               removes binaries
+#  make checkFind           tests FindComponents for memory leaks on in3
+#  make checkClient         tests GraphClient for memory leaks
+#------------------------------------------------------------------------------
+
+BASE_SOURCES   = Graph.c List.c
+BASE_OBJECTS   = Graph.o List.o
+HEADERS        = Graph.h List.h
+SOURCES	       = $(HEADERS) $(BASE_SOURCES) FindComponents.c GraphTest.c Makefile README 
+COMPILE        = gcc -c -std=c99 -Wall
+LINK           = gcc -o
+REMOVE         = rm -f
+MEMCHECK       = valgrind --leak-check=full
+
+FindComponents : FindComponents.o $(BASE_OBJECTS)
+	$(LINK) FindComponents FindComponents.o $(BASE_OBJECTS)
+GraphTest : GraphTest.o $(BASE_OBJECTS)
+	$(LINK) GraphTest GraphTest.o $(BASE_OBJECTS)
+
+GraphClient : GraphClient.o $(BASE_OBJECTS)
+	$(LINK) GraphClient GraphClient.o $(BASE_OBJECTS)
+
+FindComponents.o : FindComponents.c $(HEADERS)
+	$(COMPILE) FindComponents.c
+
+GraphTest.o : GraphTest.c $(HEADERS)
+	$(COMPILE) GraphTest.c
+GraphClient.o : GraphClient.c $(HEADERS)
+	$(COMPILE) GraphTest.c
+
+$(BASE_OBJECTS) : $(BASE_SOURCES) $(HEADERS)
+	$(COMPILE) $(BASE_SOURCES)
+
+clean :
+	$(REMOVE) FindComponents GraphClient GraphTest FindComponents.o GraphClient.o GraphTest.o $(BASE_OBJECTS)
+
+checkFind : FindComponents
+	$(MEMCHECK) FindComponents in3 junk3
+
+checkClient : GraphClient
+	$(MEMCHECK) GraphClient
+submit:
+	 submit cmps101-pt.w14 pa5 $(SOURCES)@
+
+
+1.3
+log
+@-
+@
+text
+@d14 1
+d47 2
+@
+
+
+1.2
+log
+@-
+@
+text
+@d19 2
+a20 2
+# FindComponents : FindComponents.o $(BASE_OBJECTS)
+# 	$(LINK) FindComponents FindComponents.o $(BASE_OBJECTS)
+@
+
+
+1.1
+log
+@-
+@
+text
+@d21 2
+d30 2
+d33 1
+a33 1
+	$(COMPILE) GraphClient.c
+d39 1
+a39 1
+	$(REMOVE) FindComponents GraphClient FindComponents.o GraphClient.o $(BASE_OBJECTS)
+@

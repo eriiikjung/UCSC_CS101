@@ -1,0 +1,38 @@
+head	1.1;
+access;
+symbols;
+locks;
+comment	@# @;
+
+
+1.1
+date	2014.01.20.05.09.27;	author -;	state -;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.1
+log
+@-
+@
+text
+@#!/bin/sh -x
+# $Id: mk.tests,v 1.1 2014-01-12 03:14:15-08 - - $
+export PATH=$PATH:/afs/cats.ucsc.edu/courses/cmps012b-wm/bin
+ulimit -f 32
+ulimit -t 120
+
+python3 RandomInput1.py
+
+
+./Lex inputfile c.out 
+
+
+date > test.diff
+diff python.out c.out >> test.diff
+date > test.side.diff
+diff -y python.out c.out >> test.side.diff@

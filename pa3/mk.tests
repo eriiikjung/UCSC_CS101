@@ -1,0 +1,28 @@
+#!/bin/sh -x
+# $Id: mk.tests,v 1.1 2014-01-12 03:14:15-08 - - $
+export PATH=$PATH:/afs/cats.ucsc.edu/courses/cmps012b-wm/bin
+
+for f in in1 in2 in3 in4 in5
+do
+    ./Sparse $f java.out.$f
+done
+
+date > test.diff
+date > test.side.diff
+for f in 1 2 3 4 5
+do
+    echo "----------------java.out.in$f----------out$f--------" >> test.diff
+    diff java.out.in$f out$f >> test.diff
+    echo "---------java.out.in$f----------out$f--------" >> test.side.diff
+    diff -y java.out.in$f out$f >> test.side.diff
+done
+
+# date > test345.diff
+# date > test345.side.diff
+# for f in 3 4 5
+# do
+#     echo "----------------java.out.in$f----------out$f--------" >> test345.diff
+#     diff java.out.in$f out$f >> test345.diff
+#     echo "---------java.out.in$f----------out$f--------" >> test345.side.diff
+#     diff -y java.out.in$f out$f >> test345.side.diff
+# done

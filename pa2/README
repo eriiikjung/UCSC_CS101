@@ -1,0 +1,41 @@
+Rahul Palamuttam, rpalamut@ucsc.edu
+Programming Assignment 2
+$Id: README,v 1.1 2014-01-19 18:12:14-08 - - $
+Files submitted: List.c ListClient.c Lex.c Makefile README
+
+List.c
+
+	A list data structure that utilizes a bi-directional queue by
+	implementing a doubly linked list. It uses a cursor node as a marker
+	for iteration purposes. The List is used to store the line number or 
+	Array indices from Lex.c. The node struct is soley defined in this .c 
+	file so as to make it a private pointer.
+
+List.h
+	The header file for List.c. It contains all the public functions to be
+	used by Lex.c
+
+Lex.c
+	
+	Takes in two command line arguements giving the names of an input and
+	output file. The inputfile is any textfile, while the output file will
+	consist of the lines of the inputfile arranged in alphabetical order.
+	Note that because of the compiler specifications strdup couldn't be used
+	without a warning. Instead I created a strdup() function which utilizes 
+	malloc and strcpy to achieve the same functionality.
+
+ListClient.c
+
+	A test file provided by the instructor to test the List module. It has 
+	been unaltered
+
+Makefile
+
+	A recipe to automate the building of the executable jar file Lex. It is 
+	used to speed up the process of compiling java files.
+
+README
+
+	The current file. It presents a table of contents to the project.The 
+	majority of the content in this README has been copied from the README
+	submitted for pa1

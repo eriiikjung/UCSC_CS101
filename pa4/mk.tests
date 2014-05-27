@@ -1,0 +1,14 @@
+#!/bin/sh -x
+# $Id: mk.tests,v 1.1 2014-02-26 03:00:50-08 - - $
+export PATH=$PATH:/afs/cats.ucsc.edu/courses/cmps012b-wm/bin
+
+date > test.diff
+date > test.side.diff
+for f in 1 2 3 4 5 6
+do
+    ./FindPath in$f c.out.$f
+    echo "---------------------java.out.$f------------------out$f" >> test.diff
+    diff c.out.$f out$f >>test.diff
+    echo "--------------------------java.out.in$f--------------out$f-----" >> test.side.diff
+    diff -y c.out.$f out$f >>test.side.diff
+done

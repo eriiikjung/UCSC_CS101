@@ -1,0 +1,37 @@
+head	1.1;
+access;
+symbols;
+locks;
+comment	@# @;
+
+
+1.1
+date	2014.02.26.11.00.50;	author -;	state -;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.1
+log
+@-
+@
+text
+@#!/bin/sh -x
+# $Id: mk.tests,v 1.1 2014-01-19 21:09:27-08 - - $
+export PATH=$PATH:/afs/cats.ucsc.edu/courses/cmps012b-wm/bin
+
+date > test.diff
+date > test.side.diff
+for f in 1 2 3 4 5 6
+do
+    ./FindPath in$f c.out.$f
+    echo "---------------------java.out.$f------------------out$f" >> test.diff
+    diff c.out.$f out$f >>test.diff
+    echo "--------------------------java.out.in$f--------------out$f-----" >> test.side.diff
+    diff -y c.out.$f out$f >>test.side.diff
+done
+@

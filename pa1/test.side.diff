@@ -1,0 +1,35 @@
+Fri Jan 17 17:41:18 PST 2014
+
+
+
+
+   								   
+   infile.write(line)						   infile.write(line)
+   outfile.write(line)						   outfile.write(line)
+#								#
+#								#
+#								#
+#                 python3 RandomInput1.py 			#                 python3 RandomInput1.py 
+#  Creates a matched pair of random input-output files for cm	#  Creates a matched pair of random input-output files for cm
+#  RandomInput1.py						#  RandomInput1.py
+#  by mixing up the lines in this file. To run this program d	#  by mixing up the lines in this file. To run this program d
+# close files   						# close files   
+# get file names and open files					# get file names and open files
+# read lines of this file into a list and randomize the list	# read lines of this file into a list and randomize the list
+# sort list and write lines to outfile				# sort list and write lines to outfile
+# to mix-up some other file put its name in place of 'RandomI	# to mix-up some other file put its name in place of 'RandomI
+# write mixed lines to infile					# write mixed lines to infile
+#------------------------------------------------------------	#------------------------------------------------------------
+#------------------------------------------------------------	#------------------------------------------------------------
+L = thisfile.readlines()					L = thisfile.readlines()
+L.sort()							L.sort()
+for line in L:							for line in L:
+for line in L:							for line in L:
+from random import shuffle					from random import shuffle
+infile = open('inputfile','w')					infile = open('inputfile','w')
+infile.close()							infile.close()
+outfile = open('python.out','w')				outfile = open('python.out','w')
+outfile.close()							outfile.close()
+shuffle(L)							shuffle(L)
+thisfile = open('RandomInput1.py','r')  			thisfile = open('RandomInput1.py','r')  
+thisfile.close()						thisfile.close()

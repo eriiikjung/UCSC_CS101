@@ -1,0 +1,113 @@
+head	1.3;
+access;
+symbols;
+locks;
+comment	@# @;
+
+
+1.3
+date	2014.02.26.11.00.50;	author -;	state -;
+branches;
+next	1.2;
+
+1.2
+date	2014.02.25.17.31.15;	author -;	state -;
+branches;
+next	1.1;
+
+1.1
+date	2014.02.24.11.01.34;	author -;	state -;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.3
+log
+@-
+@
+text
+@# Rahul Palamuttam, rpalamut@@ucsc.edu
+# Programming Assignment 3 : Matrix Math
+# $Id: Makefile,v 1.2 2014-02-25 09:31:15-08 - - $
+#------------------------------------------------------------------------------
+#  Makefile for CMPS 101 Programming Assignment 4
+#
+#  make                     makes FindPath
+#  make GraphClient         makes GraphClient
+#  make clean               removes binaries
+#  make checkFind           tests FindPath for memory leaks on in3
+#  make checkClient         tests GraphClient for memory leaks
+#------------------------------------------------------------------------------
+
+BASE_SOURCES   = Graph.c List.c
+BASE_OBJECTS   = Graph.o List.o
+HEADERS        = Graph.h List.h
+COMPILE        = gcc -c -std=c99 -Wall
+LINK           = gcc -o
+REMOVE         = rm -f
+MEMCHECK       = valgrind --leak-check=full
+
+FindPath : FindPath.o $(BASE_OBJECTS)
+	$(LINK) FindPath FindPath.o $(BASE_OBJECTS)
+
+GraphClient : GraphClient.o $(BASE_OBJECTS)
+	$(LINK) GraphClient GraphClient.o $(BASE_OBJECTS)
+GraphTest : GraphTest.o $(BASE_OBJECTS)
+	$(LINK) GraphTest GraphTest.o $(BASE_OBJECTS)
+
+FindPath.o : FindPath.c $(HEADERS)
+	$(COMPILE) FindPath.c
+
+GraphClient.o : GraphClient.c $(HEADERS)
+	$(COMPILE) GraphClient.c
+
+$(BASE_OBJECTS) : $(BASE_SOURCES) $(HEADERS)
+	$(COMPILE) $(BASE_SOURCES)
+
+clean :
+	$(REMOVE) FindPath GraphClient FindPath.o GraphClient.o $(BASE_OBJECTS)
+
+checkFind : FindPath
+	$(MEMCHECK) FindPath in3 junk3
+
+checkClient : GraphClient
+	$(MEMCHECK) GraphClient
+@
+
+
+1.2
+log
+@-
+@
+text
+@d3 1
+a3 1
+# $Id: Makefile,v 1.1 2014-02-24 03:01:34-08 - - $
+d22 2
+a23 2
+#FindPath : FindPath.o $(BASE_OBJECTS)
+#	$(LINK) FindPath FindPath.o $(BASE_OBJECTS)
+d25 2
+a26 2
+#GraphClient : GraphClient.o $(BASE_OBJECTS)
+#	$(LINK) GraphClient GraphClient.o $(BASE_OBJECTS)
+@
+
+
+1.1
+log
+@-
+@
+text
+@d3 1
+a3 1
+# $Id$
+d25 4
+a28 2
+GraphClient : GraphClient.o $(BASE_OBJECTS)
+	$(LINK) GraphClient GraphClient.o $(BASE_OBJECTS)
+@

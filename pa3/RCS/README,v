@@ -1,0 +1,86 @@
+head	1.2;
+access;
+symbols;
+locks;
+comment	@# @;
+
+
+1.2
+date	2014.02.06.09.15.28;	author -;	state -;
+branches;
+next	1.1;
+
+1.1
+date	2014.02.03.12.37.44;	author -;	state -;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.2
+log
+@-
+@
+text
+@Rahul Palamuttam, rpalamut@@unix.ic.ucsc.edu
+$Id: README,v 1.1 2014-02-03 04:37:44-08 - - $
+
+Files submitted : ListTest.java List.java Makefile MatrixTest.java Matrix.java README Sparse.java
+
+List.java
+
+	A list data structure that utilizes a bi-directional queue by
+	implementing a doubly linked list. It uses a cursor node as a marker
+	for iteration purposes. The List is used to entry objects that are
+	part of the matrix, in its nodes.
+
+ListTest.java
+
+	A test file provided by the instructor to test the List module. It has 
+	been altered to deal with matrix entry objects as its payload rather than
+	data that is type int
+
+Matrix.java
+
+	The primary file that supports all the specified matrix operations. It 
+	utilizes a private entry class to mark each entry of the matrix. Furthermore
+	it is a sparse matrix, which has been implemented using an array of List objects.
+	This allows the programmer to load nodes and remove nodes and perform matrix 
+	operations using the cursor iteration procedures.
+
+MatrixTest.java
+
+	A test file that has the instructors test code and my own test code. 
+
+Sparse.java
+
+	The main java program. This program takes valid input and output files
+	and outputs the information on the matrices that result from various
+	operations on the loaded matrices.
+
+Makefile
+	
+	A recipe to automate the building of the executable jar file Sparse. It is 
+	used to speed up the process of compiling java files.
+
+README
+	The current file. It presents a table of contents and brief synopsis of
+	program files.
+
+
+
+	@
+
+
+1.1
+log
+@-
+@
+text
+@d2 47
+a48 1
+$Id$
+@

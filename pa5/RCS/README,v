@@ -1,0 +1,62 @@
+head	1.1;
+access;
+symbols;
+locks;
+comment	@# @;
+
+
+1.1
+date	2014.03.10.18.36.19;	author -;	state -;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.1
+log
+@-
+@
+text
+@Rahul Palamuttam, rpalamut@@ucsc.edu
+Programming Assignment 5
+$Id: README,v 1.1 2014-02-26 03:00:50-08 - - $
+Files submitted: List.c Graph.c Graph.h GraphTest.c FindPath.c Makefile README
+
+List.c
+
+	A list data structure that utilizes a bi-directional queue by
+	implementing a doubly linked list. It uses a cursor node as a marker
+	for iteration purposes. The List is used to store the line number or 
+	Array indices from Lex.c. The node struct is soley defined in this .c 
+	file so as to make it a private pointer.
+
+List.h
+	The header file for List.c. It contains all the public functions to be
+	used by Lex.c
+
+Graph.c
+	A graph data structure that utilizes the list class. It utilizes the DFS searching
+	algrotihm. It contains and defines the Graph struct.
+Graph.h
+	The header file for Graph.c. It typecasts GraphObj pointer as  Graph.
+GraphTest.c
+	The test module for Graph.c. It uses the instructors given test, and additional
+	test cases.
+FindComponents.c
+	The main program. It reads in lines presented in a file, and stores into a matrix.
+	It then prints out the adjacency list representation of the graph. Finally it computes
+	the strongly connected components of the graph using it's transpose.
+Makefile
+
+	A recipe to automate the building of the executable jar file Lex. It is 
+	used to speed up the process of compiling java files.
+
+README
+
+	The current file. It presents a table of contents to the project.The 
+	majority of the content in this README has been copied from the README
+	submitted for pa1
+@
